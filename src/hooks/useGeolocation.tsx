@@ -25,6 +25,12 @@ function useGeolocation() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [cordinates, setCords] = useState<Coords | null>(null);
 
+  function reset() {
+    searchParams.delete("lat");
+    searchParams.delete("long");
+    setCords(null);
+  }
+
   // first time
   useEffect(() => {
     if (cordinates) return;
@@ -56,7 +62,7 @@ function useGeolocation() {
     }
   }, [cordinates, searchParams, setSearchParams]);
 
-  return { cordinates, searchParams };
+  return { cordinates, searchParams, reset };
 }
 
 export default useGeolocation;

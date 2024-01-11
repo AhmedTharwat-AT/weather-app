@@ -65,6 +65,9 @@ const GlobalStyles = createGlobalStyle`
     --color-gray-50: #111827;
     --color-gray-300: #374151;
 
+    --color-gray-800:#f3f4f6;
+    --color-gray-200: #1f2937;
+
     --color-glass-section:rgba(255, 255, 255, 0.2);
     --color-glass-input:rgba(255, 255, 255, 0.524);
     --background:  url("assets/background-day.png");

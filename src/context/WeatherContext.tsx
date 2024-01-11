@@ -11,7 +11,7 @@ type Props = {
 const WeatherContext = createContext<any>(null);
 
 function WeatherProvider({ children }: Props) {
-  const { cordinates, searchParams } = useGeolocation();
+  const { cordinates, searchParams, reset } = useGeolocation();
   const lat = Number(searchParams.get("lat"));
   const long = Number(searchParams.get("long"));
   const coords = lat && long ? { lat, long } : cordinates;
@@ -46,7 +46,7 @@ function WeatherProvider({ children }: Props) {
 
   return (
     <WeatherContext.Provider
-      value={{ forecast, weather, isLoadingWeather, isLoadingForecast }}
+      value={{ forecast, weather, isLoadingWeather, isLoadingForecast, reset }}
     >
       {children}
     </WeatherContext.Provider>
@@ -55,9 +55,9 @@ function WeatherProvider({ children }: Props) {
 
 export function useWeatherContext() {
   const context = useContext(WeatherContext);
-  const { forecast, weather, isLoadingWeather, isLoadingForecast } =
+  const { forecast, weather, isLoadingWeather, isLoadingForecast, reset } =
     context || {};
-  return { forecast, weather, isLoadingWeather, isLoadingForecast };
+  return { forecast, weather, isLoadingWeather, isLoadingForecast, reset };
 }
 
 export default WeatherProvider;

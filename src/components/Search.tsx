@@ -9,19 +9,7 @@ const SearchWrapper = styled.div`
   position: relative;
   border-radius: var(--border-radius-lg);
   overflow: hidden;
-  min-width: 50%;
   width: 100%;
-  max-width: 400px;
-
-  @media (max-width: 768px) {
-    width: 90%;
-    margin-inline: auto;
-    max-width: 90%;
-  }
-  @media (max-width: 650px) {
-    width: 100%;
-    max-width: 500px;
-  }
 `;
 
 function Search() {

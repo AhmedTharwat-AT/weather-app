@@ -42,7 +42,7 @@ const DetailsStyle = styled.section`
   justify-content: space-between;
   align-items: center;
   min-height: 185px;
-  margin-top: 15px;
+  margin-top: 30px;
 
   @media (max-width: 650px) {
     flex-wrap: wrap;
