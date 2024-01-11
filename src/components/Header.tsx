@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { styled } from "styled-components";
-import { getUTCtime } from "../utils/helpers";
+import { formatDate, getUTCtime } from "../utils/helpers";
 import { useWeatherContext } from "../context/WeatherContext";
 
 import Heading from "./Heading";
@@ -11,6 +11,7 @@ const HeaderStyle = styled.header`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 10px;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -33,9 +34,9 @@ function Header() {
   // rerender every minute to sync timer
   useEffect(() => {
     if (loading) return;
-    setTime(getUTCtime(weather.timezone));
+    setTime(formatDate(getUTCtime(weather.timezone)));
     const timer = setInterval(() => {
-      setTime(getUTCtime(weather.timezone));
+      setTime(formatDate(getUTCtime(weather.timezone)));
     }, 1000 * 60);
 
     return () => clearInterval(timer);

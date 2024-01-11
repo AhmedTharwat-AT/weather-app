@@ -16,8 +16,6 @@ function WeatherProvider({ children }: Props) {
   const long = Number(searchParams.get("long"));
   const coords = lat && long ? { lat, long } : cordinates;
 
-  console.log(coords);
-
   const { data: { data: weather } = {}, isLoading: isLoadingWeather } =
     useQuery(
       ["weather", `lat=${coords?.lat}`, `long=${coords?.long}`],
@@ -39,7 +37,8 @@ function WeatherProvider({ children }: Props) {
   //change theme
   useEffect(() => {
     if (!weather) return;
-    const isday = isDay(weather.timezone);
+    console.log(weather);
+    const isday = isDay(weather);
     isday
       ? document.documentElement.classList.add("is-day")
       : document.documentElement.classList.remove("is-day");
@@ -56,7 +55,8 @@ function WeatherProvider({ children }: Props) {
 
 export function useWeatherContext() {
   const context = useContext(WeatherContext);
-  const { forecast, weather, isLoadingWeather, isLoadingForecast } = context;
+  const { forecast, weather, isLoadingWeather, isLoadingForecast } =
+    context || {};
   return { forecast, weather, isLoadingWeather, isLoadingForecast };
 }
 

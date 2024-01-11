@@ -10,8 +10,9 @@ const sizes = {
     margin-bottom: 5px;
     font-size: 3rem;
 
+    word-break: break-word;
     @media (max-width: 650px) {
-      font-size: 2rem;
+      font-size: 2.8rem;
     }
   `,
   "2xl": css`

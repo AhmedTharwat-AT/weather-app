@@ -6,8 +6,8 @@ function formatDate(date: Date) {
   })}`;
 }
 
-function getUTCtime(shift: number) {
-  const currTime = new Date();
+function getUTCtime(shift: number, time = new Date()) {
+  const currTime = time;
   const utcTime = new Date(
     currTime.toLocaleString("en-US", {
       timeZone: "UTC",
@@ -15,12 +15,20 @@ function getUTCtime(shift: number) {
   );
   const newTime = new Date(+utcTime + 1000 * shift);
 
-  return formatDate(newTime);
+  return newTime;
 }
 
-function isDay(shift: number) {
-  const currTime = getUTCtime(shift);
-  return currTime.includes("AM") ? false : true;
+function isDay(weather: any) {
+  const currTime = getUTCtime(weather.timezone);
+  const sunRiseTime = getUTCtime(
+    weather.timezone,
+    new Date(weather.sys.sunrise * 1000)
+  );
+  const sunSetTime = getUTCtime(
+    weather.timezone,
+    new Date(weather.sys.sunset * 1000)
+  );
+  return +currTime > +sunRiseTime && +currTime < +sunSetTime;
 }
 
 const weekdays = [
