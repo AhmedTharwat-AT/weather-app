@@ -59,6 +59,18 @@ const GlobalStyles = createGlobalStyle`
 
   --phone-breakpoint : 650px;
 
+  --background:  url("assets/background-night.png");
+
+  &.is-day {
+    --color-gray-50: #111827;
+    --color-gray-300: #374151;
+
+    --color-glass-section:rgba(255, 255, 255, 0.2);
+    --color-glass-input:rgba(255, 255, 255, 0.524);
+    --background:  url("assets/background-day.png");
+
+  }
+
 }
 
 *,
@@ -68,7 +80,7 @@ const GlobalStyles = createGlobalStyle`
   padding: 0;
   margin: 0;
 
-  /* transition: all 0.3s; */
+  transition: background 0.3s;
 }
 
 html {
@@ -102,21 +114,7 @@ button {
   cursor: not-allowed;
 }
 
-select:disabled,
-input:disabled {
-  background-color: var(--color-gray-200);
-  color: var(--color-gray-500);
-}
 
-/* input:focus,
-button:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid var(--color-brand-600);
-  outline-offset: -1px;
-} */
-
-/* Parent selector, finally 😃 */
 button:has(svg) {
   line-height: 0;
 }
@@ -143,9 +141,6 @@ h6 {
 
 img {
   max-width: 100%;
-
-  /* For dark mode */
-  filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
 
 `;

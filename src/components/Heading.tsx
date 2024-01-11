@@ -26,10 +26,10 @@ const sizes = {
     line-height: 1;
 
     @media (max-width: 768px) {
-      font-size: 7rem;
+      font-size: 9rem;
     }
     @media (max-width: 650px) {
-      font-size: 11rem;
+      font-size: 9rem;
     }
   `,
 };

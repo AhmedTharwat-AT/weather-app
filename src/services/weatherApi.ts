@@ -7,6 +7,7 @@ type Coords = {
 
 async function getWeather(coords: Coords | null) {
   if (!coords || !coords.lat || !coords.long) return;
+
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.long}&appid=${apikey}&units=metric`
   );

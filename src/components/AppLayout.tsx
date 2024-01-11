@@ -18,7 +18,7 @@ const LayoutStyle = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: url("assets/background-night.png") center/cover no-repeat;
+  background: var(--background) center/cover no-repeat;
   padding: 50px;
   border-radius: 25px;
   min-height: 100%;

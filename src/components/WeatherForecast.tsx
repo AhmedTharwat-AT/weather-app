@@ -2,14 +2,18 @@ import { styled } from "styled-components";
 import { useWeatherContext } from "../context/WeatherContext";
 
 import ForecastItem from "./ForecastItem";
+import { LoaderOne } from "./Loader";
 
 const ForecastStyle = styled.section`
   margin-top: 15px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   gap: 22px;
+  row-gap: 30px;
   padding: 20px;
+  min-height: 170px;
 
   /* glass effect */
   background-color: var(--color-glass-section);
@@ -32,15 +36,14 @@ function WeatherForecast() {
       forecast.list[39],
     ];
   }
-  console.log(items);
-
-  if (isLoadingForecast || !forecast) return <h1>Loading..</h1>;
 
   return (
     <ForecastStyle>
-      {items.map((item) => (
-        <ForecastItem key={item.dt} item={item} />
-      ))}
+      {isLoadingForecast || !forecast ? (
+        <LoaderOne />
+      ) : (
+        items.map((item) => <ForecastItem key={item.dt} item={item} />)
+      )}
     </ForecastStyle>
   );
 }

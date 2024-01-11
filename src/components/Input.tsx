@@ -7,14 +7,15 @@ const Input = styled.input`
   height: 100%;
   width: 100%;
   border: none;
-  color: #fff;
+  color: var(--color-gray-50);
   background-color: var(--color-glass-input);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.6px);
   -webkit-backdrop-filter: blur(6.6px);
+  border-radius: var(--border-radius-lg);
 
   &:focus {
-    outline: var(--color-gray-500);
+    outline: none;
   }
 `;
 

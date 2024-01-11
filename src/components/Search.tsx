@@ -40,8 +40,11 @@ function Search() {
       <Input
         value={query}
         onChange={(e) => setQuery(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") handleSearch();
+        }}
         type="text"
-        placeholder="Enter city name"
+        placeholder="Enter city name or code"
       />
       <Button onClick={handleSearch}>search</Button>
     </SearchWrapper>

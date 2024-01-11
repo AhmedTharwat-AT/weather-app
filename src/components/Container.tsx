@@ -9,8 +9,8 @@ const Container = styled.div`
 
   @media screen and (min-width: 650px) {
     /* Small devices (phones) */
-    max-width: 640px;
-    padding: 20px;
+    max-width: 670px;
+    padding: 18px;
     height: auto;
   }
 

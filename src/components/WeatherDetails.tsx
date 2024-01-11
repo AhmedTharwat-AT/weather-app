@@ -4,6 +4,7 @@ import { useWeatherContext } from "../context/WeatherContext";
 import { RiCelsiusFill } from "react-icons/ri";
 import Heading from "./Heading";
 import VisualDetails from "./VisualDetails";
+import { LoaderOne } from "./Loader";
 
 const Unit = styled(RiCelsiusFill)`
   font-size: 3rem;
@@ -39,28 +40,36 @@ const Status = styled.div`
 const DetailsStyle = styled.section`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  min-height: 185px;
 
   @media (max-width: 650px) {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 `;
 
 function WeatherDetails() {
   const { weather, isLoadingWeather } = useWeatherContext();
-
-  if (isLoadingWeather || !weather) return <h1>Loading ...</h1>;
+  const Loading = isLoadingWeather || !weather;
 
   return (
     <DetailsStyle>
-      <TempStyle>
-        <Heading size="3xl">{Math.ceil(weather.main.temp)}</Heading>
-        <div>
-          <Unit />
-          <Status>{weather.weather[0].description}</Status>
-        </div>
-      </TempStyle>
-      <VisualDetails data={weather} />
+      {Loading ? (
+        <LoaderOne />
+      ) : (
+        <>
+          <TempStyle>
+            <Heading size="3xl">{Math.ceil(weather.main.temp)}</Heading>
+            <div>
+              <Unit />
+              <Status>{weather.weather[0].description}</Status>
+            </div>
+          </TempStyle>
+          <VisualDetails data={weather} />
+        </>
+      )}
     </DetailsStyle>
   );
 }

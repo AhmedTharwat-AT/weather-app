@@ -12,6 +12,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5px;
+  white-space: nowrap;
 `;
 
 const Stat = styled.div`
@@ -42,6 +43,7 @@ const Icon = styled.div`
 
 const Text = styled.div`
   display: flex;
+  gap: 2px;
 `;
 
 function MainStats({ data }: Props) {
