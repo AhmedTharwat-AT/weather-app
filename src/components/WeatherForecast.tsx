@@ -5,7 +5,7 @@ import ForecastItem from "./ForecastItem";
 import { LoaderOne } from "./Loader";
 
 const ForecastStyle = styled.section`
-  margin-top: 15px;
+  margin-top: 0px;
   display: flex;
   justify-content: space-around;
   align-items: center;

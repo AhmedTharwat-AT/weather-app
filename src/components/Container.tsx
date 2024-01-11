@@ -23,11 +23,6 @@ const Container = styled.div`
     /* Large devices (desktops) */
     max-width: 960px;
   }
-
-  @media screen and (min-width: 1200px) {
-    /* Extra large devices (large desktops) */
-    max-width: 1140px;
-  }
 `;
 
 export default Container;

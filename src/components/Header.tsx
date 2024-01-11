@@ -16,7 +16,7 @@ const HeaderStyle = styled.header`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: start;
-    gap: 8px;
+    gap: 18px;
   }
 `;
 

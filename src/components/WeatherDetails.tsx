@@ -42,9 +42,10 @@ const DetailsStyle = styled.section`
   justify-content: space-between;
   align-items: center;
   min-height: 185px;
+  margin-top: 15px;
 
   @media (max-width: 650px) {
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
   }

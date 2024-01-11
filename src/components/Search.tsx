@@ -20,6 +20,7 @@ const SearchWrapper = styled.div`
   }
   @media (max-width: 650px) {
     width: 100%;
+    max-width: 500px;
   }
 `;
 
