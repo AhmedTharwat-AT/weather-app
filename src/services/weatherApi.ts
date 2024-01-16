@@ -1,4 +1,4 @@
-let apikey = "";
+let apikey: string | undefined = "";
 
 if (import.meta.env) {
   apikey = import.meta.env.VITE_API_KEY;
