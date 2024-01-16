@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useErrorBoundary } from "react-error-boundary";
 import { useSearchParams } from "react-router-dom";
 
 type Coords = {
@@ -9,6 +10,7 @@ type Coords = {
 function useGeolocation() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [cordinates, setCords] = useState<Coords | null>(null);
+  const { showBoundary } = useErrorBoundary();
 
   function reset() {
     searchParams.delete("lat");
@@ -40,11 +42,14 @@ function useGeolocation() {
         },
         (error) => {
           console.log("error getting your position ! " + error.message);
+          showBoundary(error);
           throw new Error(error.message);
         }
       );
+    } else {
+      throw new Error("your device doesnt support location function !");
     }
-  }, [cordinates, searchParams, setSearchParams]);
+  }, [cordinates, searchParams, setSearchParams, showBoundary]);
 
   return { cordinates, searchParams, reset };
 }

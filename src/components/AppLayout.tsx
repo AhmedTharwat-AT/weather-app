@@ -4,6 +4,9 @@ import Header from "./Header";
 import Container from "./Container";
 import WeatherDetails from "./WeatherDetails";
 import WeatherForecast from "./WeatherForecast";
+import { ErrorBoundary } from "react-error-boundary";
+import FallbackError from "./FallbackError";
+import WeatherProvider from "../context/WeatherContext";
 
 const LayoutStyle = styled.div`
   background: url("assets/fullpage-bg.png") center/cover no-repeat;
@@ -37,13 +40,17 @@ const Wrapper = styled.main`
 function AppLayout() {
   return (
     <LayoutStyle>
-      <Container>
-        <Wrapper>
-          <Header />
-          <WeatherDetails />
-          <WeatherForecast />
-        </Wrapper>
-      </Container>
+      <ErrorBoundary fallbackRender={FallbackError}>
+        <WeatherProvider>
+          <Container>
+            <Wrapper>
+              <Header />
+              <WeatherDetails />
+              <WeatherForecast />
+            </Wrapper>
+          </Container>
+        </WeatherProvider>
+      </ErrorBoundary>
     </LayoutStyle>
   );
 }
