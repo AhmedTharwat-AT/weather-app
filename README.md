@@ -1,6 +1,6 @@
 # Weather-app
 
-New simple weather project to practice new tools and languages like Typescript , i used openweathermap api or the weather data ,
+New simple weather project to practice new tools and languages like Typescript , i used [openweathermap api](https://openweathermap.org/api) for the weather data ,
 The app provides access to the weather of any city and includes a day/night mode based on the timezone, as well as a 5-day forecast.
 
 ## Screenshots
