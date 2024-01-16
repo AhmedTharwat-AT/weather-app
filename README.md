@@ -1,7 +1,12 @@
 # Weather-app
 
-New simple weather project to practice new tools and languages like Typescript , i used [openweathermap api](https://openweathermap.org/api) for the weather data ,
-The app provides access to the weather of any city and includes a day/night mode based on the timezone, as well as a 5-day forecast.
+A simple weather project get weather data . i used [openweathermap api](https://openweathermap.org/api) for the weather data .
+
+## Features and Tools
+
+* Used typescript for type saftey code . react query to handle remote api data and styled-components for the syles .
+* The app provides access to the weather of any city and includes a day/night mode based on the timezone of the searched city .
+* A 5-day forecast for each city .
 
 ## Screenshots
 <img style="width:80%" src="https://github.com/AhmedTharwat-AT/weather-app/assets/89677139/35c4bd7d-5223-45a7-8ec7-18c66db1a230"/>
