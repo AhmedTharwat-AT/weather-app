@@ -8,6 +8,10 @@ A simple weather project get weather data . i used [openweathermap api](https://
 * The app provides access to the weather of any city and includes a day/night mode based on the timezone of the searched city .
 * A 5-day forecast for each city .
 
+---
+### [Live Preview](https://weatherly-web-app-project.netlify.app)
+---
+
 ## Screenshots
 <img style="width:80%" src="https://github.com/AhmedTharwat-AT/weather-app/assets/89677139/35c4bd7d-5223-45a7-8ec7-18c66db1a230"/>
 <img style="width:80%" src="https://github.com/AhmedTharwat-AT/weather-app/assets/89677139/a25a189b-04ed-4002-8923-30841abe82ba"/>
