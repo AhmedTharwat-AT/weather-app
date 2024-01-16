@@ -60,7 +60,7 @@ async function getWeatherForecast(coords: Coords | null) {
 async function getCityCoords(query: string) {
   if (!query) return;
   const res = await fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=${apikey}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=1&appid=${apikey}`
   );
 
   if (!res.ok) {
