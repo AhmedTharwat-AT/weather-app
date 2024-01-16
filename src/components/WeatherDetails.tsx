@@ -43,6 +43,8 @@ const DetailsStyle = styled.section`
   align-items: center;
   min-height: 185px;
   margin-top: 30px;
+  max-width: 640px;
+  margin-inline: auto;
 
   @media (max-width: 650px) {
     flex-wrap: wrap;

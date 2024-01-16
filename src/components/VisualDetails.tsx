@@ -9,8 +9,6 @@ interface Props {
 const VisualStyle = styled.div`
   display: flex;
   align-items: center;
-
-  /* flex-wrap: wrap; */
 `;
 
 function VisualDetails({ data }: Props) {

@@ -88,8 +88,6 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%;
-  /* height:100%;
-  min-height:fit-content; */
 }
 
 body {

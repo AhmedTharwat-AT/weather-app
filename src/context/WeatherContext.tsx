@@ -37,7 +37,7 @@ function WeatherProvider({ children }: Props) {
   //change theme
   useEffect(() => {
     if (!weather) return;
-    console.log(weather);
+
     const isday = isDay(weather);
     isday
       ? document.documentElement.classList.add("is-day")
@@ -53,6 +53,7 @@ function WeatherProvider({ children }: Props) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useWeatherContext() {
   const context = useContext(WeatherContext);
   const { forecast, weather, isLoadingWeather, isLoadingForecast, reset } =

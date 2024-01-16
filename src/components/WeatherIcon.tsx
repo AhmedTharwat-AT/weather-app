@@ -19,7 +19,7 @@ const Img = styled.img<Styled>`
       ? css`
           max-width: 80px;
         `
-      : ""}/* margin: -4px; */
+      : ""}
 `;
 
 function WeatherIcon({ icon, size }: Props) {
