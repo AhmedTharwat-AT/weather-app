@@ -2,10 +2,8 @@ let apikey: string | undefined = "";
 
 if (import.meta.env) {
   apikey = import.meta.env.VITE_API_KEY;
-  console.log("one", import.meta.env);
 } else {
   apikey = process.env.VITE_API_KEY;
-  console.log("two", process.env);
 }
 
 type Coords = {
