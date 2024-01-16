@@ -3,7 +3,7 @@
 A simple weather project get weather data . i used [openweathermap api](https://openweathermap.org/api) for the weather data .
 
 ## Features and Tools
-
+* This app was implemented using Reactjs + Typescript for type safety , Styled-components for styles ,React-Query + Context api for weather data and React-Router for local state.
 * Used typescript for type saftey code . react query to handle remote api data and styled-components for the syles .
 * The app provides access to the weather of any city and includes a day/night mode based on the timezone of the searched city .
 * A 5-day forecast for each city .
